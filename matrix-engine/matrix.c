@@ -8,6 +8,8 @@
 
 #include "matrix.h"
 
+// Testing Git Boys //
+
 static uint32_t g_seed = 0;
 
 static ssize_t g_width = 0;
