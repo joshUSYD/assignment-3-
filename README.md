@@ -1,2 +1,3 @@
 # assignment-3-
-A repository for computer science assignment. Not for use.
+Computer science assignment repository. Not for general use, can't stop you if you do
+But no reason for you to either...
