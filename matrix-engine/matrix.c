@@ -8,8 +8,6 @@
 
 #include "matrix.h"
 
-// Testing Git Boys //
-
 static uint32_t g_seed = 0;
 
 static ssize_t g_width = 0;
@@ -420,4 +418,3 @@ uint32_t get_frequency(const uint32_t* matrix, uint32_t value) {
 
     return 0;
 }
-
