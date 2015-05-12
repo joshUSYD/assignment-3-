@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <pthread.h>
 #include <inttypes.h>
+#include <immintrin.h>
 
 #include "matrix.h"
 
