@@ -17,6 +17,19 @@ static ssize_t g_elements = 0;
 
 static ssize_t g_nthreads = 1;
 
+/* ============================================================================
+ *  MATRIX OPERATIONS ENGINE
+ *  VERSION: 1.00           DATE: 12-05-2015
+ *
+ *  AUTHOR: Joshua Bellman  SID: 440282382
+ *
+ * Engine that performs computations on n x n matrices (specified in program
+ *  call )
+ *
+ * ============================================================================
+ */
+
+
 ////////////////////////////////
 ///     UTILITY FUNCTIONS    ///
 ////////////////////////////////
