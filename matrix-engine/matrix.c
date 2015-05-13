@@ -23,8 +23,8 @@ static ssize_t g_nthreads = 1;
  *
  *  AUTHOR: Joshua Bellman  SID: 440282382
  *
- * Engine that performs computations on n x n matrices (specified in program
- *  call )
+ * Engine that performs computations on n x n matrices that are created
+ * by functions within the engine
  *
  * ============================================================================
  */
@@ -348,17 +348,14 @@ uint32_t* matrix_pow(const uint32_t* matrix, uint32_t exponent) {
  */
 uint32_t get_sum(const uint32_t* matrix) {
 
-    /*
-        to do
+    uint32_t result = 0;
+    for (ssize_t y = 0; y < g_height; y++) {
+      for (ssize_t x = 0; x < g_width; x++) {
+        result = result + matrix[y * g_width + x];
+      }
+    }
 
-        1 2
-        2 1 => 6
-
-        1 1
-        1 1 => 4
-    */
-
-    return 0;
+    return result;
 }
 
 /**
