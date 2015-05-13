@@ -299,18 +299,12 @@ uint32_t* matrix_pow(const uint32_t* matrix, uint32_t exponent) {
 
     uint32_t* result = new_matrix();
 
-    /*
-        to do
-
-        1 2        1 0
-        3 4 ^ 0 => 0 1
-
-        1 2        1 2
-        3 4 ^ 1 => 3 4
-
-        1 2        199 290
-        3 4 ^ 4 => 435 634
-    */
+    if (exponent == 0) {
+      result = identity_matrix();
+    } else {
+      // TODO: powering!
+      return 0;
+    }
 
     return result;
 }
