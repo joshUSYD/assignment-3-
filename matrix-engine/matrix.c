@@ -349,10 +349,8 @@ uint32_t* matrix_pow(const uint32_t* matrix, uint32_t exponent) {
 uint32_t get_sum(const uint32_t* matrix) {
 
     uint32_t result = 0;
-    for (ssize_t y = 0; y < g_height; y++) {
-      for (ssize_t x = 0; x < g_width; x++) {
-        result = result + matrix[y * g_width + x];
-      }
+    for (ssize_t e = 0; e < g_elements; e++) {
+      result = result + matrix[e];
     }
 
     return result;
@@ -377,17 +375,13 @@ uint32_t get_trace(const uint32_t* matrix) {
  */
 uint32_t get_minimum(const uint32_t* matrix) {
 
-    /*
-        to do
-
-        1 2
-        3 4 => 1
-
-        4 3
-        2 1 => 1
-    */
-
-    return 0;
+    uint32_t smallest = matrix[0]; // Assumes valid matrices always passed
+    for (ssize_t e = 0; e < g_elements; e++) {
+      if (matrix[e] < smallest) {
+        smallest = matrix[e];
+      }
+    }
+    return smallest;
 }
 
 /**
@@ -395,17 +389,13 @@ uint32_t get_minimum(const uint32_t* matrix) {
  */
 uint32_t get_maximum(const uint32_t* matrix) {
 
-    /*
-        to do
-
-        1 2
-        3 4 => 4
-
-        4 3
-        2 1 => 4
-    */
-
-    return 0;
+    uint32_t greatest = matrix[0];
+    for (ssize_t e = 0; e < g_elements; e++) {
+      if (matrix[e] > greatest) {
+        greatest = matrix[e];
+      }
+    }
+    return greatest;
 }
 
 /**
