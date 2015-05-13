@@ -243,15 +243,9 @@ uint32_t* scalar_add(const uint32_t* matrix, uint32_t scalar) {
 
     uint32_t* result = new_matrix();
 
-    /*
-        to do
-
-        1 0        2 1
-        0 1 + 1 => 1 2
-
-        1 2        5 6
-        3 4 + 4 => 7 8
-    */
+    for (ssize_t e = 0; e < g_elements; e++) {
+      result[e] = matrix[e] + scalar;
+    }
 
     return result;
 }
@@ -263,15 +257,9 @@ uint32_t* scalar_mul(const uint32_t* matrix, uint32_t scalar) {
 
     uint32_t* result = new_matrix();
 
-    /*
-        to do
-
-        1 0        2 0
-        0 1 x 2 => 0 2
-
-        1 2        2 4
-        3 4 x 2 => 6 8
-    */
+    for (ssize_t e = 0; e < g_elements; e++) {
+      result[e] = matrix[e] * scalar;
+    }
 
     return result;
 }
@@ -283,15 +271,9 @@ uint32_t* matrix_add(const uint32_t* matrix_a, const uint32_t* matrix_b) {
 
     uint32_t* result = new_matrix();
 
-    /*
-        to do
-
-        1 0   0 1    1 1
-        0 1 + 1 0 => 1 1
-
-        1 2   4 4    5 6
-        3 4 + 4 4 => 7 8
-    */
+    for (ssize_t e = 0; e < g_elements; e++) {
+      result[e] = matrix_a[e] + matrix_b[e];
+    }
 
     return result;
 }
@@ -303,15 +285,9 @@ uint32_t* matrix_mul(const uint32_t* matrix_a, const uint32_t* matrix_b) {
 
     uint32_t* result = new_matrix();
 
-    /*
-        to do
-
-        1 2   1 0    1 2
-        3 4 x 0 1 => 3 4
-
-        1 2   5 6    19 22
-        3 4 x 7 8 => 43 50
-    */
+    for (ssize_t e = 0; e < g_elements; e++) {
+      result[e] = matrix_a[e] * matrix_b[e];
+    }
 
     return result;
 }
@@ -403,15 +379,12 @@ uint32_t get_maximum(const uint32_t* matrix) {
  */
 uint32_t get_frequency(const uint32_t* matrix, uint32_t value) {
 
-    /*
-        to do
+    uint32_t freq = 0;
+    for (ssize_t e = 0; e < g_elements; e++) {
+      if (matrix[e] == value) {
+        freq++;
+      }
+    }
 
-        1 1
-        1 1 :: 1 => 4
-
-        1 0
-        0 1 :: 2 => 0
-    */
-
-    return 0;
+    return freq;
 }
